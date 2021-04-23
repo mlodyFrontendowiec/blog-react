@@ -11,32 +11,36 @@ import Courses from "./views/Courses/Courses";
 import Challenges from "./views/Challenges/Challenges";
 import LogIn from "./views/LogIn/LogIn";
 import AdminPanel from "./views/AdminPanel/AdminPanel";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 function App() {
   return (
-    <Switch>
-      <Route path="/blog" exact>
-        <Blog />
-      </Route>
-      <Route path="/forum" exact>
-        <Forum />
-      </Route>
-      <Route path="/courses" exact>
-        <Courses />
-      </Route>
-      <Route path="/challenges" exact>
-        <Challenges />
-      </Route>
-      <Route path="/login" exact>
-        <LogIn />
-      </Route>
-      <Route path="/admin" exact>
-        <AdminPanel />
-      </Route>
-      <Route path="/">
-        <Redirect to="/blog" />
-      </Route>
-    </Switch>
+    <Provider store={store}>
+      <Switch>
+        <Route path="/blog" exact>
+          <Blog />
+        </Route>
+        <Route path="/forum" exact>
+          <Forum />
+        </Route>
+        <Route path="/courses" exact>
+          <Courses />
+        </Route>
+        <Route path="/challenges" exact>
+          <Challenges />
+        </Route>
+        <Route path="/login" exact>
+          <LogIn />
+        </Route>
+        <Route path="/admin" exact>
+          <AdminPanel />
+        </Route>
+        <Route path="/">
+          <Redirect to="/blog" />
+        </Route>
+      </Switch>
+    </Provider>
   );
 }
 
