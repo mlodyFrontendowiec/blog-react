@@ -1,10 +1,31 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { LogoutUser } from "../../actions/loginAction";
 
 const Header = () => {
   const { isUserLogged } = useSelector((state) => state.login);
+  const dispatch = useDispatch();
+
+  const logOutUser = () => {
+    dispatch(LogoutUser());
+  };
+
+  const loginComponent = isUserLogged ? (
+    <StyledLinkContainer>
+      <StyledListLinkLogOut onClick={logOutUser}>Log out</StyledListLinkLogOut>
+    </StyledLinkContainer>
+  ) : (
+    <StyledLinkContainer>
+      <StyledListLink
+        to={{ pathname: "/login" }}
+        activeStyle={{ color: "grey" }}
+      >
+        Log in
+      </StyledListLink>
+    </StyledLinkContainer>
+  );
 
   return (
     <StyledHeader>
@@ -43,14 +64,7 @@ const Header = () => {
               Challenges
             </StyledListLink>
           </StyledLinkContainer>
-          <StyledLinkContainer>
-            <StyledListLink
-              to={{ pathname: "/login" }}
-              activeStyle={{ color: "grey" }}
-            >
-              Log In
-            </StyledListLink>
-          </StyledLinkContainer>
+          {loginComponent}
         </StyledListContainer>
       </StyledNavigation>
     </StyledHeader>
@@ -95,6 +109,19 @@ const StyledLinkContainer = styled.li`
 const StyledListLink = styled(NavLink)`
   text-decoration: none;
   color: white;
+  :hover {
+    color: gray;
+    transition: 0.1s;
+  }
+`;
+const StyledListLinkLogOut = styled.button`
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 16px;
+  outline: none;
   :hover {
     color: gray;
     transition: 0.1s;
