@@ -1,16 +1,30 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { addPost } from "../../actions/blogAction";
+import { useDispatch, useSelector } from "react-redux";
 
 const ForumForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.blog);
+
   const handleInputTitle = (e) => {
     setTitle(e.target.value);
   };
   const handleInputContent = (e) => {
     setContent(e.target.value);
   };
-  const handleSubmitForm = () => {};
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
+    dispatch(addPost({ title, content }));
+    setTitle("");
+    setContent("");
+    console.log(state);
+  };
+  console.log(state);
+
   return (
     <StyledFormContainer>
       <StyledHeaderForm>Add new post</StyledHeaderForm>
