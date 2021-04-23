@@ -33,7 +33,7 @@ function App() {
         <Route path="/login" exact>
           <LogIn />
         </Route>
-        <Route path="/admin" exact>
+        <Route path="/admin/:type" exact>
           <AdminPanel />
         </Route>
         <Route path="/">
