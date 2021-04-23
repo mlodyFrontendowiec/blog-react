@@ -34,8 +34,8 @@ const ForumForm = () => {
 };
 
 const StyledFormContainer = styled.div`
-  width: 350px;
-  height: 350px;
+  width: 380px;
+  height: 380px;
   flex-direction: column;
   display: flex;
   align-items: center;
@@ -64,6 +64,7 @@ const StyledInput = styled.input`
   color: #0360eb;
   margin-bottom: 20px;
   outline: none;
+  margin-left: 3px;
 `;
 const StyledTextarea = styled.textarea`
   font-size: 16px;
@@ -73,6 +74,7 @@ const StyledTextarea = styled.textarea`
   outline: none;
   width: 205px;
   height: 150px;
+  margin-left: 3px;
 `;
 
 const StyledButton = styled.button`
