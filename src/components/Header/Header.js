@@ -1,27 +1,55 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = () => {
+  const { isUserLogged } = useSelector((state) => state.login);
+
   return (
     <StyledHeader>
       <StyledLogo>Blog</StyledLogo>
       <StyledNavigation>
         <StyledListContainer>
           <StyledLinkContainer>
-            <StyledListLink to="/blog">Blog</StyledListLink>
+            <StyledListLink
+              to={{ pathname: "/blog" }}
+              activeStyle={{ color: "grey" }}
+            >
+              Blog
+            </StyledListLink>
           </StyledLinkContainer>
           <StyledLinkContainer>
-            <StyledListLink to="/forum">Forum</StyledListLink>
+            <StyledListLink
+              to={{ pathname: "/forum" }}
+              activeStyle={{ color: "grey" }}
+            >
+              Forum
+            </StyledListLink>
           </StyledLinkContainer>
           <StyledLinkContainer>
-            <StyledListLink to="/courses">Courses</StyledListLink>
+            <StyledListLink
+              to={{ pathname: "/courses" }}
+              activeStyle={{ color: "grey" }}
+            >
+              Courses
+            </StyledListLink>
           </StyledLinkContainer>
           <StyledLinkContainer>
-            <StyledListLink to="/challenges">Challenges</StyledListLink>
+            <StyledListLink
+              to={{ pathname: "/challenges" }}
+              activeStyle={{ color: "grey" }}
+            >
+              Challenges
+            </StyledListLink>
           </StyledLinkContainer>
           <StyledLinkContainer>
-            <StyledListLink to="/sign-in">Sign In</StyledListLink>
+            <StyledListLink
+              to={{ pathname: "/login" }}
+              activeStyle={{ color: "grey" }}
+            >
+              Log In
+            </StyledListLink>
           </StyledLinkContainer>
         </StyledListContainer>
       </StyledNavigation>
