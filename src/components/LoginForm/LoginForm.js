@@ -12,6 +12,7 @@ const LoginForm = () => {
   let history = useHistory();
 
   const dispatch = useDispatch();
+
   const { isUserLogged } = useSelector((state) => state.login);
 
   console.log(isUserLogged);
@@ -28,6 +29,9 @@ const LoginForm = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     if (login === "admin" && password === "admin") {
+      dispatch(LoginUser());
+      history.push("/admin/blog");
+    } else if (login === "user" && password === "user") {
       dispatch(LoginUser());
       history.push("/blog");
     } else {
