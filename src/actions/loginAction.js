@@ -8,7 +8,7 @@ export const LoginUser = () => ({
   },
 });
 export const LogoutUser = () => ({
-  type: LOGIN,
+  type: LOGOUT,
   payload: {
     isUserLogged: false,
   },
