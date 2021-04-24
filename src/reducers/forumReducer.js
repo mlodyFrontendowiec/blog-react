@@ -6,7 +6,7 @@ export const forumReducer = (state = [], { type, payload }) => {
       return [...state, payload];
       break;
     case DELETE_POST:
-      return state;
+      return [...state.filter((item) => item.id !== payload.id)];
       break;
     case EDIT_POST:
       return state;
