@@ -26,6 +26,7 @@ const ListItemAdmin = ({ title, content, id }) => {
 
 const StyledHeader = styled.h1`
   color: #0360eb;
+  font-size: 25px;
 `;
 
 const StyledButtonAdd = styled.button`
@@ -36,6 +37,9 @@ const StyledButtonAdd = styled.button`
   color: #0360eb;
   cursor: pointer;
   outline: none;
+  box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
+  border-radius: 15px;
+
   :hover {
     color: white;
     background-color: #0360eb;
@@ -50,6 +54,9 @@ const StyledListItem = styled.li`
   text-align: center;
   list-style: none;
   margin-top: 10px;
+  box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
+  border-radius: 15px;
+  padding: 10px;
 `;
 
 const StyledForm = styled.form`

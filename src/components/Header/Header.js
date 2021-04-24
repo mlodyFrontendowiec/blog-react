@@ -78,6 +78,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0px 10px 10px 7px rgba(0, 0, 255, 0.1);
 `;
 const StyledLogo = styled.h1`
   font-size: 30px;

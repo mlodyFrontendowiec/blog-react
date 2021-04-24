@@ -59,15 +59,12 @@ const StyledFormContainer = styled.div`
   border-radius: 15px;
   box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
 `;
-const StyledLabel = styled.label`
-  text-shadow: 1px 1px 2px gray;
-`;
+const StyledLabel = styled.label``;
 
 const StyledHeaderForm = styled.h2`
   color: white;
   margin-bottom: 20px;
   color: #0360eb;
-  text-shadow: 1px 1px 2px gray;
 `;
 
 const StyledForm = styled.form`
@@ -113,6 +110,7 @@ const StyledButton = styled.button`
   background-color: white;
   box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
   text-shadow: 1px 1px 2px gray;
+  border-radius: 10px;
   :hover {
     transition: 0.3s;
     color: white;

@@ -21,9 +21,9 @@ const ListItem = ({ title, content, postId, id }) => {
       <StyledForm onSubmit={handleButtonAddComment}>
         <label>
           Dodaj komentarz:
-          <input value={comment} onChange={handleInputComment} />
+          <StyledInput value={comment} onChange={handleInputComment} />
         </label>
-        <button type="submit">Dodaj</button>
+        <StyledButton type="submit">Dodaj</StyledButton>
       </StyledForm>
     </StyledListItem>
   );
@@ -32,7 +32,18 @@ const ListItem = ({ title, content, postId, id }) => {
 const StyledHeader = styled.h1`
   color: #0360eb;
   font-size: 25px;
-  text-shadow: 1px 1px 2px gray;
+`;
+
+const StyledInput = styled.input`
+  font-size: 15px;
+  color: #0360eb;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 3px 6px;
+  margin-left: 3px;
+  border: 1px solid #0360eb;
+  border-radius: 10px;
+  box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
 `;
 
 const StyledListItem = styled.li`
@@ -50,6 +61,23 @@ const StyledListItem = styled.li`
 
 const StyledForm = styled.form`
   margin-top: 50px;
+`;
+const StyledButton = styled.button`
+  font-size: 14px;
+  color: #0360eb;
+  border: 2px solid #0360eb;
+  padding: 4px 8px;
+  cursor: pointer;
+  margin-left: 10px;
+  background-color: white;
+  box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
+  text-shadow: 1px 1px 2px gray;
+  border-radius: 10px;
+  :hover {
+    transition: 0.3s;
+    color: white;
+    background-color: #0360eb;
+  }
 `;
 
 export default ListItem;
