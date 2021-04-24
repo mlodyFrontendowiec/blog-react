@@ -3,8 +3,11 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import ForumForm from "../../components/ForumForm/forumForm";
 import Header from "../../components/Header/Header";
+import ListItem from "./subcomponents/ListItem";
 const Forum = () => {
   const { isUserLogged } = useSelector((state) => state.login);
+
+  const forum = useSelector((state) => state.forum);
 
   const FormComponent = isUserLogged ? (
     <ForumForm />
@@ -14,10 +17,13 @@ const Forum = () => {
     </StyledParagraph>
   );
 
+  const postListComponent = forum.map((item) => <ListItem {...item} />);
+
   return (
     <>
       <Header />
       {FormComponent}
+      <ul>{postListComponent}</ul>
     </>
   );
 };
