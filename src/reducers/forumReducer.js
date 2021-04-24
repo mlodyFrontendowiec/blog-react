@@ -1,6 +1,6 @@
-import { ADD_POST, DELETE_POST, EDIT_POST } from "../actions/blogAction";
+import { ADD_POST, DELETE_POST, EDIT_POST } from "../actions/forumAction";
 
-export const blogReducer = (state = [], { type, payload }) => {
+export const forumReducer = (state = [], { type, payload }) => {
   switch (type) {
     case ADD_POST:
       return [...state, payload];

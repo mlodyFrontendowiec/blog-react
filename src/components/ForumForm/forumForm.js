@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { addPost } from "../../actions/blogAction";
+import { addPost } from "../../actions/forumAction";
 import { useDispatch, useSelector } from "react-redux";
 
 const ForumForm = () => {

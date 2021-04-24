@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import { blogReducer } from "./blogReducer";
+import { forumReducer } from "./forumReducer";
 import { loginReducer } from "./loginReducer";
 
 export const rootReducer = combineReducers({
-  blog: blogReducer,
+  forum: forumReducer,
   login: loginReducer,
 });
 
