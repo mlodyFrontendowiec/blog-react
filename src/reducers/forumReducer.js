@@ -1,18 +1,25 @@
-import { ADD_POST, DELETE_POST, EDIT_POST } from "../actions/forumAction";
+import {
+  ADD_POST,
+  DELETE_POST,
+  EDIT_POST,
+  ADD_COMMENT,
+} from "../actions/forumAction";
 
 export const forumReducer = (state = [], { type, payload }) => {
   switch (type) {
     case ADD_POST:
       return [...state, payload];
-      break;
     case DELETE_POST:
       return [...state.filter((item) => item.id !== payload.id)];
-      break;
-    case EDIT_POST:
-      return state;
-      break;
+    case ADD_COMMENT:
+      const newState = state.map((item) => {
+        if (item.id === payload.postId) {
+          item.comments.push({ comment: payload.comment, date: Date.now() });
+        }
+        return item;
+      });
+      return newState;
     default:
       return state;
-      break;
   }
 };

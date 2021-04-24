@@ -17,7 +17,9 @@ const Forum = () => {
     </StyledParagraph>
   );
 
-  const postListComponent = forum.map((item) => <ListItem {...item} />);
+  const postListComponent = forum.map((item) => (
+    <ListItem {...item} postId={item.id} />
+  ));
 
   return (
     <>

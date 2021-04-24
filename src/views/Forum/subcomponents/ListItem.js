@@ -1,14 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { addComment } from "../../../actions/forumAction";
 
-const ListItem = ({ title, content }) => {
+const ListItem = ({ title, content, postId, id }) => {
+  const [comment, setComment] = useState("");
+  const dispatch = useDispatch();
+  const handleInputComment = (e) => {
+    setComment(e.target.value);
+  };
+  const handleButtonAddComment = (e) => {
+    e.preventDefault();
+    dispatch(addComment({ comment, postId, id }));
+  };
   return (
     <StyledListItem>
       <StyledHeader>{title}</StyledHeader>
       <p>{content}</p>
-      <StyledForm>
+      <StyledForm onSubmit={handleButtonAddComment}>
         <label>
-          Dodaj komentarz: <input />
+          Dodaj komentarz:
+          <input value={comment} onChange={handleInputComment} />
         </label>
         <button type="submit">Dodaj</button>
       </StyledForm>

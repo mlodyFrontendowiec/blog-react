@@ -77,6 +77,7 @@ const StyledInput = styled.input`
   margin-bottom: 20px;
   outline: none;
   margin-left: 3px;
+  border: 1px solid #0360eb;
 `;
 const StyledTextarea = styled.textarea`
   font-size: 16px;
@@ -87,6 +88,7 @@ const StyledTextarea = styled.textarea`
   width: 205px;
   height: 150px;
   margin-left: 3px;
+  border: 1px solid #0360eb;
 `;
 
 const StyledButton = styled.button`
