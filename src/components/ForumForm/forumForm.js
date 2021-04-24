@@ -21,9 +21,7 @@ const ForumForm = () => {
     dispatch(addPost({ title, content }));
     setTitle("");
     setContent("");
-    console.log(state);
   };
-  console.log(state);
 
   return (
     <StyledFormContainer>

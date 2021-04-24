@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
-import { useHistory, useParams } from "react-router";
+import { Route, Switch, useHistory, useParams } from "react-router";
 import styled from "styled-components";
 import Aside from "../../components/Aside/Aside";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import ForumAdminPanel from "./ForumAdminPanel";
 
 const AdminPanel = () => {
   let { type } = useParams();
@@ -15,7 +16,7 @@ const AdminPanel = () => {
     if (!isUserLogged) {
       history.push("/blog");
     }
-  }, [isUserLogged]);
+  }, [isUserLogged, history]);
 
   return (
     <>
@@ -23,8 +24,16 @@ const AdminPanel = () => {
         <StyledHeader>Admin Panel</StyledHeader>
         <StyledLink to="/blog">Go to site</StyledLink>
       </StyledAdminPanel>
-      <Aside />
-      <StyledButtonAdd>Add new content in {type}</StyledButtonAdd>
+      <StyledAdminContainer>
+        <Aside />
+        <Switch>
+          <Route path="/admin/blog" exact></Route>
+          <Route path="/admin/forum" exact>
+            <ForumAdminPanel />
+          </Route>
+          <Route></Route>
+        </Switch>
+      </StyledAdminContainer>
     </>
   );
 };
@@ -40,23 +49,6 @@ const StyledAdminPanel = styled.header`
   align-items: center;
 `;
 
-const StyledButtonAdd = styled.button`
-  position: absolute;
-  left: 50%;
-  top: 16%;
-  transform: translateX(-50%);
-  border: 2px solid #0360eb;
-  padding: 5px 10px;
-  background-color: white;
-  color: #0360eb;
-  cursor: pointer;
-  outline: none;
-  :hover {
-    color: white;
-    background-color: #0360eb;
-  }
-`;
-
 const StyledHeader = styled.header`
   margin-left: 20px;
   font-size: 20px;
@@ -67,6 +59,10 @@ const StyledLink = styled(Link)`
   color: white;
   font-size: 16px;
   margin-right: 20px;
+`;
+
+const StyledAdminContainer = styled.section`
+  display: flex;
 `;
 
 export default AdminPanel;
