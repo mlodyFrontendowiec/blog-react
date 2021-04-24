@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { addPost } from "../../actions/forumAction";
+import { addPost } from "../../../../actions/forumAction";
 import { useDispatch, useSelector } from "react-redux";
 
 const ForumForm = () => {
@@ -27,18 +27,20 @@ const ForumForm = () => {
     <StyledFormContainer>
       <StyledHeaderForm>Add new post</StyledHeaderForm>
       <StyledForm onSubmit={handleSubmitForm}>
-        <label>
+        <StyledLabel>
           Title:
           <StyledInput type="text" onChange={handleInputTitle} value={title} />
-        </label>
-        <label style={{ display: "flex" }}>
+        </StyledLabel>
+        <StyledLabel style={{ display: "flex" }}>
           Content:
           <StyledTextarea
+            cols="26.5"
+            rows="7"
             type="password"
             onChange={handleInputContent}
             value={content}
           />
-        </label>
+        </StyledLabel>
         <StyledButton>Add post</StyledButton>
       </StyledForm>
     </StyledFormContainer>
@@ -54,12 +56,18 @@ const StyledFormContainer = styled.div`
   justify-content: center;
   margin: 20px auto;
   border: 2px solid #0360eb;
+  border-radius: 15px;
+  box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
+`;
+const StyledLabel = styled.label`
+  text-shadow: 1px 1px 2px gray;
 `;
 
 const StyledHeaderForm = styled.h2`
   color: white;
   margin-bottom: 20px;
   color: #0360eb;
+  text-shadow: 1px 1px 2px gray;
 `;
 
 const StyledForm = styled.form`
@@ -76,19 +84,23 @@ const StyledInput = styled.input`
   color: #0360eb;
   margin-bottom: 20px;
   outline: none;
+  padding: 3px 6px;
   margin-left: 3px;
   border: 1px solid #0360eb;
+  border-radius: 10px;
+  box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
 `;
 const StyledTextarea = styled.textarea`
+  padding: 3px 6px;
   font-size: 16px;
   color: #0360eb;
   margin-bottom: 20px;
   resize: none;
   outline: none;
-  width: 205px;
-  height: 150px;
   margin-left: 3px;
   border: 1px solid #0360eb;
+  border-radius: 10px;
+  box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
 `;
 
 const StyledButton = styled.button`
@@ -99,8 +111,10 @@ const StyledButton = styled.button`
   cursor: pointer;
   margin-top: 20px;
   background-color: white;
+  box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
+  text-shadow: 1px 1px 2px gray;
   :hover {
-    transition: 0.2s;
+    transition: 0.3s;
     color: white;
     background-color: #0360eb;
   }

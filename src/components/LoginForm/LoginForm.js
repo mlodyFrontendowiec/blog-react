@@ -13,9 +13,7 @@ const LoginForm = () => {
 
   const dispatch = useDispatch();
 
-  const { isUserLogged } = useSelector((state) => state.login);
-
-  console.log(isUserLogged);
+  // const { isUserLogged } = useSelector((state) => state.login);
 
   const handleInputLogin = (e) => {
     setLogin(e.target.value);
@@ -44,7 +42,7 @@ const LoginForm = () => {
       {error && (
         <StyledParagraph>Podaj poprawny login lub hasło</StyledParagraph>
       )}
-      <StyledHeaderForm>Login </StyledHeaderForm>
+      <StyledHeaderForm>Sign In</StyledHeaderForm>
       <StyledForm onSubmit={handleSubmitForm}>
         <label>
           Login:{" "}
@@ -76,6 +74,8 @@ const StyledFormContainer = styled.div`
   justify-content: center;
   margin: 20px auto;
   border: 2px solid #0360eb;
+  border-radius: 15px;
+  box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
 `;
 
 const StyledHeaderForm = styled.h2`
@@ -97,6 +97,11 @@ const StyledInput = styled.input`
   font-size: 20px;
   color: #0360eb;
   margin-bottom: 20px;
+  border: 1px solid #0360eb;
+  border-radius: 10px;
+  box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
+  padding: 3px 8px;
+  outline: none;
 `;
 
 const StyledButton = styled.button`
@@ -107,6 +112,9 @@ const StyledButton = styled.button`
   cursor: pointer;
   margin-top: 20px;
   background-color: white;
+  box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
+  border-radius: 10px;
+
   :hover {
     transition: 0.2s;
     color: white;
