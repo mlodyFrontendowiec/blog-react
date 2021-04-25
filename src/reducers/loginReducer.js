@@ -1,7 +1,7 @@
 import { LOGOUT, LOGIN } from "../actions/loginAction";
 
 export const loginReducer = (
-  state = { isUserLogged: false },
+  state = { isUserLogged: true },
   { type, payload }
 ) => {
   switch (type) {
