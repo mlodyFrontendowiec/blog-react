@@ -14,7 +14,7 @@ export const forumReducer = (state = [], { type, payload }) => {
     case ADD_COMMENT:
       const newState = state.map((item) => {
         if (item.id === payload.postId) {
-          item.comments.push({ comment: payload.comment, date: Date.now() });
+          item.comments.push(payload);
         }
         return item;
       });
