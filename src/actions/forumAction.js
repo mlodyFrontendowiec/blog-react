@@ -27,6 +27,7 @@ export const addComment = ({ comment, postId }) => ({
     id: Math.floor(Math.random() * 32142324233221),
     comment,
     postId,
+    date: Date.now(),
   },
 });
 
