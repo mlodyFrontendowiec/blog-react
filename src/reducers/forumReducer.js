@@ -1,8 +1,8 @@
 import {
   ADD_POST,
   DELETE_POST,
-  EDIT_POST,
   ADD_COMMENT,
+  REMOVE_COMMENT,
 } from "../actions/forumAction";
 
 export const forumReducer = (state = [], { type, payload }) => {
@@ -19,6 +19,12 @@ export const forumReducer = (state = [], { type, payload }) => {
         return item;
       });
       return newState;
+    case REMOVE_COMMENT:
+      const newStateComment = state.map((item) => {
+        item.comments = [];
+        return item;
+      });
+      return newStateComment;
     default:
       return state;
   }
