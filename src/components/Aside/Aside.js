@@ -13,7 +13,7 @@ const Aside = () => {
   );
 };
 const StyledAside = styled.aside`
-  width: 200px;
+  width: 300px;
   height: 1000px;
   background-color: #0360eb;
   display: flex;
@@ -25,6 +25,7 @@ const StyledAsideLink = styled(Link)`
   text-decoration: none;
   color: white;
   margin-top: 10px;
+  font-size: 20px;
   :hover {
     color: gray;
   }
