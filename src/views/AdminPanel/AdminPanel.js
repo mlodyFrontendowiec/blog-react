@@ -5,6 +5,7 @@ import Aside from "../../components/Aside/Aside";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ForumAdminPanel from "./ForumAdminPanel/ForumAdminPanel";
+import BlogAdminPanel from "./BlogAdminPanel/BlogAdminPanel";
 
 const AdminPanel = () => {
   let { type } = useParams();
@@ -27,7 +28,9 @@ const AdminPanel = () => {
       <StyledAdminContainer>
         <Aside />
         <Switch>
-          <Route path="/admin/blog" exact></Route>
+          <Route path="/admin/blog" exact>
+            <BlogAdminPanel />
+          </Route>
           <Route path="/admin/forum" exact>
             <ForumAdminPanel />
           </Route>

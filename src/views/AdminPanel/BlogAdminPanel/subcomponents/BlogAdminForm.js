@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { addPost } from "../../../../actions/forumAction";
 import { useDispatch } from "react-redux";
 
-const ForumForm = () => {
+const BlogForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [image, setImage] = useState("");
 
   const dispatch = useDispatch();
 
@@ -14,6 +15,9 @@ const ForumForm = () => {
   };
   const handleInputContent = (e) => {
     setContent(e.target.value);
+  };
+  const handleInputImage = (e) => {
+    setImage(e.target.value);
   };
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -41,7 +45,11 @@ const ForumForm = () => {
             value={content}
           />
         </StyledLabel>
-        <StyledButton>Add post</StyledButton>
+        <StyledLabel>
+          Image url:
+          <StyledInput type="text" onChange={handleInputImage} value={image} />
+        </StyledLabel>
+        <StyledButton>Add to blog</StyledButton>
       </StyledForm>
     </StyledFormContainer>
   );
@@ -65,6 +73,7 @@ const StyledHeaderForm = styled.h2`
   color: white;
   margin-bottom: 20px;
   color: #0360eb;
+  margin-top: 10px;
 `;
 
 const StyledForm = styled.form`
@@ -118,4 +127,4 @@ const StyledButton = styled.button`
   }
 `;
 
-export default ForumForm;
+export default BlogForm;
