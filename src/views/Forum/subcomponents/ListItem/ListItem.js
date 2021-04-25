@@ -1,11 +1,15 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { addComment } from "../../../../actions/forumAction";
+import Comments from "../Comments/Comments";
 
 const ListItem = ({ title, content, postId, id }) => {
   const [comment, setComment] = useState("");
+  const [isComments, setIsComments] = useState(false);
+
   const dispatch = useDispatch();
+
   const handleInputComment = (e) => {
     setComment(e.target.value);
   };
@@ -13,15 +17,21 @@ const ListItem = ({ title, content, postId, id }) => {
     e.preventDefault();
     dispatch(addComment({ comment, postId, id }));
     setComment("");
+    setIsComments(true);
   };
   return (
     <StyledListItem>
       <StyledHeader>{title}</StyledHeader>
       <p>{content}</p>
+      {isComments && <Comments postId={postId} />}
       <StyledForm onSubmit={handleButtonAddComment}>
         <label>
           Dodaj komentarz:
-          <StyledInput value={comment} onChange={handleInputComment} />
+          <StyledInput
+            value={comment}
+            onChange={handleInputComment}
+            maxLength="75"
+          />
         </label>
         <StyledButton type="submit">Dodaj</StyledButton>
       </StyledForm>
@@ -48,7 +58,6 @@ const StyledInput = styled.input`
 
 const StyledListItem = styled.li`
   width: 70%;
-  height: 150px;
   border: 2px solid #0360eb;
   margin: 0 auto;
   margin-bottom: 20px;
