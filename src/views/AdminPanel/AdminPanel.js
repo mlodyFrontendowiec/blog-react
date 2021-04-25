@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Aside from "../../components/Aside/Aside";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import ForumAdminPanel from "./ForumAdminPanel";
+import ForumAdminPanel from "./ForumAdminPanel/ForumAdminPanel";
 
 const AdminPanel = () => {
   let { type } = useParams();
