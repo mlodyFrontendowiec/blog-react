@@ -8,7 +8,6 @@ const ForumForm = () => {
   const [content, setContent] = useState("");
 
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.blog);
 
   const handleInputTitle = (e) => {
     setTitle(e.target.value);
@@ -18,6 +17,7 @@ const ForumForm = () => {
   };
   const handleSubmitForm = (e) => {
     e.preventDefault();
+    if (title.length === 0 && content.length === 0) return;
     dispatch(addPost({ title, content }));
     setTitle("");
     setContent("");
