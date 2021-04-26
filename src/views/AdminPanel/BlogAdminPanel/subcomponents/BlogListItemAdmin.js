@@ -8,7 +8,6 @@ const BlogListItemAdmin = ({ title, content, id, imageUrl }) => {
   const dispatch = useDispatch();
 
   const handleButtonClick = () => {
-    console.log("ok");
     dispatch(deleteContent({ id }));
   };
 

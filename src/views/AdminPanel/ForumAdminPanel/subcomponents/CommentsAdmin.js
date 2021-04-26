@@ -5,11 +5,9 @@ import CommentItemAdmin from "./CommentsItemAdmin";
 
 const CommentsAdmin = ({ postId }) => {
   const forum = useSelector((state) => state.forum);
-  console.log(forum);
   let commentItemsComponent = [];
   if (forum.length) {
     forum.forEach((element) => {
-      console.log(element);
       if (element && element.id === postId) {
         commentItemsComponent = element.comments.map((item, index) => (
           <CommentItemAdmin {...item} key={index} />

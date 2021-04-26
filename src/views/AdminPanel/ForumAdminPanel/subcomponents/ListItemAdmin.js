@@ -9,7 +9,6 @@ const ListItemAdmin = ({ title, content, id, postId }) => {
 
   const handleButtonClick = () => {
     dispatch(deletePost({ id }));
-    console.log("ok");
   };
 
   return (

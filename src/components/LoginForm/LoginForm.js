@@ -17,11 +17,9 @@ const LoginForm = () => {
 
   const handleInputLogin = (e) => {
     setLogin(e.target.value);
-    console.log(e.target.value);
   };
   const handleInputPassword = (e) => {
     setPassword(e.target.value);
-    console.log(e.target.value);
   };
 
   const handleSubmitForm = (e) => {

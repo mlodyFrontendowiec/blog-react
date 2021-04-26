@@ -5,7 +5,6 @@ import CommentItem from "./CommentItem";
 
 const Comments = ({ postId }) => {
   const forum = useSelector((state) => state.forum);
-  console.log(forum);
   let commentItemsComponent = [];
   forum.forEach((element) => {
     if (element.id === postId) {
