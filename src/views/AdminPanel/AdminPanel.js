@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ForumAdminPanel from "./ForumAdminPanel/ForumAdminPanel";
 import BlogAdminPanel from "./BlogAdminPanel/BlogAdminPanel";
+import CoursesAdminPanel from "./CoursesAdminPanel/CoursesAdminPanel";
 
 const AdminPanel = () => {
   let { type } = useParams();
@@ -33,6 +34,9 @@ const AdminPanel = () => {
           </Route>
           <Route path="/admin/forum" exact>
             <ForumAdminPanel />
+          </Route>
+          <Route path="/admin/courses" exact>
+            <CoursesAdminPanel />
           </Route>
           <Route></Route>
         </Switch>
