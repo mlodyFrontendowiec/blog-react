@@ -15,7 +15,7 @@ const Forum = () => {
   const ForumView = isUserLogged ? (
     <>
       <ForumForm />
-      <ul>{postListComponent}</ul>
+      <StyledListConatiner>{postListComponent}</StyledListConatiner>
     </>
   ) : (
     <StyledParagraph>
@@ -31,6 +31,9 @@ const Forum = () => {
   );
 };
 
+const StyledListConatiner = styled.ul`
+  width: 100%;
+`;
 const StyledParagraph = styled.p`
   font-size: 20px;
   color: #0360eb;

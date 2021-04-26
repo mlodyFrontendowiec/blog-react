@@ -29,6 +29,7 @@ const ForumAdminPanel = () => {
 const StyledListContainer = styled.ul`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 const StyledButtonRemove = styled.button`
   border: 2px solid #0360eb;
