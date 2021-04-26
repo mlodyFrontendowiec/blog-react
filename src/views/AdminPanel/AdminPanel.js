@@ -66,6 +66,7 @@ const StyledLink = styled(Link)`
 
 const StyledAdminContainer = styled.section`
   display: flex;
+  width: 100%;
 `;
 
 export default AdminPanel;
