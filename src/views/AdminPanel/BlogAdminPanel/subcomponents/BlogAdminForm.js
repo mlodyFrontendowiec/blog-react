@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { addPost } from "../../../../actions/forumAction";
+import { addContent } from "../../../../actions/blogAction";
 import { useDispatch } from "react-redux";
 
 const BlogForm = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-  const [image, setImage] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   const dispatch = useDispatch();
 
@@ -17,14 +17,15 @@ const BlogForm = () => {
     setContent(e.target.value);
   };
   const handleInputImage = (e) => {
-    setImage(e.target.value);
+    setImageUrl(e.target.value);
   };
   const handleSubmitForm = (e) => {
     e.preventDefault();
     if (title.length === 0 && content.length === 0) return;
-    dispatch(addPost({ title, content }));
+    dispatch(addContent({ title, content, imageUrl }));
     setTitle("");
     setContent("");
+    setImageUrl("");
   };
 
   return (
@@ -47,7 +48,11 @@ const BlogForm = () => {
         </StyledLabel>
         <StyledLabel>
           Image url:
-          <StyledInput type="text" onChange={handleInputImage} value={image} />
+          <StyledInput
+            type="text"
+            onChange={handleInputImage}
+            value={imageUrl}
+          />
         </StyledLabel>
         <StyledButton>Add to blog</StyledButton>
       </StyledForm>
