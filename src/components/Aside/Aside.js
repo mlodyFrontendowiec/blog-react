@@ -14,7 +14,7 @@ const Aside = () => {
 };
 const StyledAside = styled.aside`
   width: 300px;
-  height: 1000px;
+  min-height: 100vh;
   background-color: #0360eb;
   display: flex;
   flex-direction: column;

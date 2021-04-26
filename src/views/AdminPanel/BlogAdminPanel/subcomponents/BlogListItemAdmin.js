@@ -2,16 +2,23 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import styled from "styled-components";
+import { deleteContent } from "../../../../actions/blogAction";
 
 const BlogListItemAdmin = ({ title, content, id, imageUrl }) => {
+  const dispatch = useDispatch();
+
   const handleButtonClick = () => {
     console.log("ok");
+    dispatch(deleteContent({ id }));
   };
 
   return (
     <StyledListItem>
       <StyledHeader>{title}</StyledHeader>
-      <p>{content}</p>
+      <StyledContentContainer>
+        <img src={imageUrl} alt={title} />
+        <p>{content}</p>
+      </StyledContentContainer>
       <StyledForm>
         <StyledButtonAdd type="button" onClick={handleButtonClick}>
           Remove Content
@@ -20,6 +27,11 @@ const BlogListItemAdmin = ({ title, content, id, imageUrl }) => {
     </StyledListItem>
   );
 };
+
+const StyledContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const StyledHeader = styled.h1`
   color: #0360eb;
@@ -44,7 +56,7 @@ const StyledButtonAdd = styled.button`
   }
 `;
 const StyledListItem = styled.li`
-  width: 60%;
+  width: 100%;
   border: 2px solid #0360eb;
   margin: 0 auto;
   margin-bottom: 20px;
