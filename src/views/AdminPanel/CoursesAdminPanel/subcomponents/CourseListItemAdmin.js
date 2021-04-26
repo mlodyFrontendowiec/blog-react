@@ -8,6 +8,10 @@ const CourseItem = ({ title, content, price, startDate, endDate }) => {
         <StyledHeader>{title}</StyledHeader>
         <StyledParagraph>{content}</StyledParagraph>
         <StyledPrice>Price:{price}$</StyledPrice>
+        <StyledDateContainer>
+          <StyledDate>Start Date: {startDate}</StyledDate>
+          <StyledDate>End Date: {endDate}</StyledDate>
+        </StyledDateContainer>
       </StyledListItem>
     </StyledContentContainer>
   );
@@ -21,8 +25,18 @@ const StyledParagraph = styled.p``;
 
 const StyledPrice = styled.p`
   font-weight: bold;
+  margin-top: 10px;
 `;
-const StyledDate = styled.p``;
+
+const StyledDate = styled.p`
+  font-weight: bold;
+`;
+
+const StyledDateContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+`;
 
 const StyledListItem = styled.li`
   width: 80%;

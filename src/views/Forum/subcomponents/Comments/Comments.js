@@ -15,8 +15,6 @@ const Comments = ({ postId }) => {
     }
   });
 
-  console.log(commentItemsComponent);
-
   return <StyledCommentsWrapper>{commentItemsComponent}</StyledCommentsWrapper>;
 };
 

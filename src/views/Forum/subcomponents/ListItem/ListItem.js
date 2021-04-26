@@ -26,14 +26,14 @@ const ListItem = ({ title, content, postId, id }) => {
       {isComments && <Comments postId={postId} />}
       <StyledForm onSubmit={handleButtonAddComment}>
         <label>
-          Dodaj komentarz:
+          Add comment:
           <StyledInput
             value={comment}
             onChange={handleInputComment}
             maxLength="75"
           />
         </label>
-        <StyledButton type="submit">Dodaj</StyledButton>
+        <StyledButton type="submit">Add</StyledButton>
       </StyledForm>
     </StyledListItem>
   );
