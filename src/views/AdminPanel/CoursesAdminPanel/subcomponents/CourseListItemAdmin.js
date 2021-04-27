@@ -1,7 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { deleteCourse } from "../../../../actions/courseAction";
 
-const CourseItem = ({ title, content, price, startDate, endDate }) => {
+const CourseItem = ({ title, content, price, startDate, endDate, id }) => {
+  const dispatch = useDispatch();
+
+  const handleButtonRemove = () => {
+    dispatch(deleteCourse({ id }));
+  };
   return (
     <StyledContentContainer>
       <StyledListItem>
@@ -12,6 +19,7 @@ const CourseItem = ({ title, content, price, startDate, endDate }) => {
           <StyledDate>Start Date: {startDate}</StyledDate>
           <StyledDate>End Date: {endDate}</StyledDate>
         </StyledDateContainer>
+        <StyledButton onClick={handleButtonRemove}>Remove</StyledButton>
       </StyledListItem>
     </StyledContentContainer>
   );
@@ -26,6 +34,24 @@ const StyledParagraph = styled.p``;
 const StyledPrice = styled.p`
   font-weight: bold;
   margin-top: 10px;
+`;
+
+const StyledButton = styled.button`
+  margin-top: -20px;
+  border: 2px solid #0360eb;
+  padding: 5px 10px;
+  background-color: white;
+  color: #0360eb;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0px 8px 10px 5px rgba(0, 0, 255, 0.1);
+  border-radius: 15px;
+
+  :hover {
+    transition: 0.2s;
+    color: white;
+    background-color: #0360eb;
+  }
 `;
 
 const StyledDate = styled.p`
