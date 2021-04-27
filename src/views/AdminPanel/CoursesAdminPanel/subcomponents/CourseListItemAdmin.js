@@ -3,7 +3,15 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { deleteCourse } from "../../../../actions/courseAction";
 
-const CourseItem = ({ title, content, price, startDate, endDate, id }) => {
+const CourseItem = ({
+  title,
+  content,
+  price,
+  startDate,
+  endDate,
+  id,
+  admin = true,
+}) => {
   const dispatch = useDispatch();
 
   const handleButtonRemove = () => {
@@ -19,7 +27,9 @@ const CourseItem = ({ title, content, price, startDate, endDate, id }) => {
           <StyledDate>Start Date: {startDate}</StyledDate>
           <StyledDate>End Date: {endDate}</StyledDate>
         </StyledDateContainer>
-        <StyledButton onClick={handleButtonRemove}>Remove</StyledButton>
+        {admin && (
+          <StyledButton onClick={handleButtonRemove}>Remove</StyledButton>
+        )}
       </StyledListItem>
     </StyledContentContainer>
   );
