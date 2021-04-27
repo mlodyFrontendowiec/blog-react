@@ -1,6 +1,6 @@
 # Blog
 
-I used React, Redux and Styled Components libraries to write this application. This application is simple blog. Admin can add content in panel and it shows on blog page. Is is simple CMS.
+I used React, Redux and Styled Components libraries to write this application. This application is simple blog. Admin can add content in panel and it shows on blog page. It is simple CMS.
 
 <img src="./screen3.png"/>
 
