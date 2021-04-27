@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import styled from "styled-components";
 import { deleteContent } from "../../../../actions/blogAction";
@@ -15,8 +15,8 @@ const BlogListItemAdmin = ({ title, content, id, imageUrl }) => {
     <StyledListItem>
       <StyledHeader>{title}</StyledHeader>
       <StyledContentContainer>
-        <img src={imageUrl} alt={title} />
-        <p>{content}</p>
+        <StyledImage width="300px" src={imageUrl} alt={title} />
+        <StyledParagraph>{content}</StyledParagraph>
       </StyledContentContainer>
       <StyledForm>
         <StyledButtonAdd type="button" onClick={handleButtonClick}>
@@ -30,11 +30,25 @@ const BlogListItemAdmin = ({ title, content, id, imageUrl }) => {
 const StyledContentContainer = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 1000px;
+`;
+
+const StyledImage = styled.img`
+  margin: 0 auto;
+  display: block;
 `;
 
 const StyledHeader = styled.h1`
   color: #0360eb;
   font-size: 25px;
+  margin-bottom: 20px;
+`;
+const StyledParagraph = styled.p`
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 20px;
 `;
 
 const StyledButtonAdd = styled.button`
@@ -55,7 +69,7 @@ const StyledButtonAdd = styled.button`
   }
 `;
 const StyledListItem = styled.li`
-  width: 100%;
+  width: 80%;
   border: 2px solid #0360eb;
   margin: 0 auto;
   margin-bottom: 20px;

@@ -18,13 +18,25 @@ const ForumAdminPanel = () => {
   };
   return (
     <StyledListContainer>
-      <StyledButtonRemove onClick={handleRemoveComment}>
-        Remove all comments
-      </StyledButtonRemove>
+      {postListComponent.length !== 0 ? (
+        <StyledButtonRemove onClick={handleRemoveComment}>
+          Remove all comments
+        </StyledButtonRemove>
+      ) : (
+        <StyledParagraph>No forum posts</StyledParagraph>
+      )}
+
       {postListComponent}
     </StyledListContainer>
   );
 };
+
+const StyledParagraph = styled.p`
+  font-size: 22px;
+  color: #0360eb;
+  text-align: center;
+  margin-top: 20px;
+`;
 
 const StyledListContainer = styled.ul`
   display: flex;

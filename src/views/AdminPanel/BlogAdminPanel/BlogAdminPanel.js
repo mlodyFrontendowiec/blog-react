@@ -20,6 +20,7 @@ const BlogAdminPanel = () => {
 
 const StyledListContainer = styled.ul`
   display: flex;
+  width: 100%;
   flex-direction: column;
   margin: 0 auto;
 `;

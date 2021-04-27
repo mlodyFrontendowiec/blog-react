@@ -4,8 +4,8 @@ const BlogListItem = ({ title, content, imageUrl }) => {
   return (
     <StyledListItem>
       <StyledHeader>{title}</StyledHeader>
-      <img src={imageUrl} alt={title} />
-      <p>{content}</p>
+      <img width="300px" src={imageUrl} alt={title} />
+      <StyledParagraph>{content}</StyledParagraph>
     </StyledListItem>
   );
 };
@@ -13,6 +13,11 @@ const BlogListItem = ({ title, content, imageUrl }) => {
 const StyledHeader = styled.h1`
   color: #0360eb;
   font-size: 25px;
+  margin-bottom: 20px;
+`;
+
+const StyledParagraph = styled.p`
+  margin-top: 20px;
 `;
 
 const StyledListItem = styled.li`

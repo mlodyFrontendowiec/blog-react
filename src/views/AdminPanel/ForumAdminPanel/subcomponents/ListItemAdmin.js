@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import { deletePost, removeComment } from "../../../../actions/forumAction";
+import { deletePost } from "../../../../actions/forumAction";
 import CommentsAdmin from "./CommentsAdmin";
 
-const ListItemAdmin = ({ title, content, id, postId }) => {
+const ListItemAdmin = ({ title, content, id }) => {
   const dispatch = useDispatch();
 
   const handleButtonClick = () => {

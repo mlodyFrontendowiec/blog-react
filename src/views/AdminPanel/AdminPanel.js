@@ -9,7 +9,6 @@ import BlogAdminPanel from "./BlogAdminPanel/BlogAdminPanel";
 import CoursesAdminPanel from "./CoursesAdminPanel/CoursesAdminPanel";
 
 const AdminPanel = () => {
-  let { type } = useParams();
   const history = useHistory();
 
   const { isUserLogged } = useSelector((state) => state.login);
