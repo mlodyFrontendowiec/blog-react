@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import ForumAdminPanel from "./ForumAdminPanel/ForumAdminPanel";
 import BlogAdminPanel from "./BlogAdminPanel/BlogAdminPanel";
 import CoursesAdminPanel from "./CoursesAdminPanel/CoursesAdminPanel";
+import ChallengesAdminPanel from "./ChallengeAdmin/ChallengesAdminPanel";
 
 const AdminPanel = () => {
   const history = useHistory();
@@ -37,7 +38,9 @@ const AdminPanel = () => {
           <Route path="/admin/courses" exact>
             <CoursesAdminPanel />
           </Route>
-          <Route></Route>
+          <Route>
+            <ChallengesAdminPanel />
+          </Route>
         </Switch>
       </StyledAdminContainer>
     </>
