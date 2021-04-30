@@ -10,5 +10,3 @@ export const blogReducer = (state = [], { type, payload }) => {
       return state;
   }
 };
-
-export default blogReducer;
