@@ -1,12 +1,13 @@
 export const ADD_CHALLENGES = "ADD_CHALLENGES";
 export const DELETE_CHALLENGES = "DELETE_CHALLENGES";
 
-export const addChallenge = ({ title, contnent, days }) => ({
+export const addChallenge = ({ title, content, days }) => ({
   type: ADD_CHALLENGES,
   payload: {
     title,
-    contnent,
+    content,
     days,
+    id: Math.floor(Math.random() * 32142324233221),
   },
 });
 
