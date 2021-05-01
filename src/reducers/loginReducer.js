@@ -7,12 +7,11 @@ export const loginReducer = (
   switch (type) {
     case LOGIN:
       return payload;
-      break;
+
     case LOGOUT:
       return payload;
-      break;
+
     default:
       return state;
-      break;
   }
 };
