@@ -3,9 +3,7 @@ import React from "react";
 import "./reset.css";
 
 import { Route, Switch, Redirect } from "react-router";
-
 import Blog from "./views/Blog/Blog";
-import Header from "./components/Header/Header";
 import Forum from "./views/Forum/Forum";
 import Courses from "./views/Courses/Courses";
 import Challenges from "./views/Challenges/Challenges";
