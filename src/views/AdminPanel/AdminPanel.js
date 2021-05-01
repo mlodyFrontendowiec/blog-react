@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Route, Switch, useHistory, useParams } from "react-router";
+import { Route, Switch, useHistory } from "react-router";
 import styled from "styled-components";
 import Aside from "../../components/Aside/Aside";
 import { useSelector } from "react-redux";
